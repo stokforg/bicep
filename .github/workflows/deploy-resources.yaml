@@ -3,7 +3,7 @@ name: Deploy Bicep Template
 on:
   push:
     branches:
-      - main
+      - master
   workflow_dispatch:
 
 jobs:
