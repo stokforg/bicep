@@ -25,4 +25,4 @@ jobs:
       with:
         azPSVersion: latest
         inlineScript: |
-          ./scripts/Deploy-Resources.ps1 -ResourceGroupName "bicep"
+          ./scripts/Deploy-Infra.ps1 -ResourceGroupName "bicep"
