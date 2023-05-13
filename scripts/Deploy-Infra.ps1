@@ -9,4 +9,11 @@ $timestamp = Get-Date -Format 'yyyyMMddHHmmss'
 $deploymentName = "MyDeploment-$timestamp"
 
 # Deploy the template using the Azure PowerShell module
-New-AzResourceGroupDeployment -Name $deploymentName -ResourceGroupName $ResourceGroupName -TemplateFile './templates/infra.bicep'
+
+$params = @{
+    Name = $deploymentName 
+    ResourceGroupName = $ResourceGroupName 
+    TemplateFile = './templates/infra.bicep'
+    TemplateParameterFile = "./templates/infra.dev.parameters.json"
+}
+New-AzResourceGroupDeployment @params
